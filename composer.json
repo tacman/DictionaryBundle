@@ -32,7 +32,7 @@
         "friends-of-phpspec/phpspec-code-coverage": "^6.1",
         "friendsofphp/php-cs-fixer": "^3.4",
         "pedrotroller/php-cs-custom-fixer": "^2.27",
-        "phpspec/phpspec": "^7.1",
+        "phpspec/phpspec": "^7.2",
         "phpspec/prophecy": "^1.15",
         "phpstan/phpstan": "^1.4.6",
         "symfony/twig-bridge": "^4.4 || ^5.4 || ^6.0",
