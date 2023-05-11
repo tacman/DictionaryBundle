@@ -1,5 +1,5 @@
 {
-    "name": "knplabs/dictionary-bundle",
+    "name": "tacman/dictionary-bundle",
     "description": "Are you often tired to repeat static choices like gender or civility in your apps ?",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "symfony/config": "^5.4 || ^6.0",
         "symfony/dependency-injection": "^5.4 || ^6.0",
         "symfony/form": "^5.4 || ^6.0",
@@ -34,7 +34,8 @@
         "pedrotroller/php-cs-custom-fixer": "^2.28",
         "phpspec/phpspec": "^7.2",
         "phpspec/prophecy": "^1.15",
-        "phpstan/phpstan": "^1.9",
+        "phpstan/phpstan": "^1.10",
+        "rector/rector": "^0.16.0",
         "symfony/twig-bridge": "^5.4 || ^6.0",
         "symfony/var-dumper": "^5.4 || ^6.0"
     },
