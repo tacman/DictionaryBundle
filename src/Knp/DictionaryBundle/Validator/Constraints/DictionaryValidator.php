@@ -19,10 +19,7 @@ final class DictionaryValidator extends ConstraintValidator
         $this->dictionaries = $dictionaries;
     }
 
-    /**
-     * @param mixed $var
-     */
-    private function varToString($var): string
+    private function varToString(mixed $var): string
     {
         if (null === $var) {
             return 'null';

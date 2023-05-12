@@ -15,20 +15,11 @@ use ReturnTypeWillChange;
  */
 final class Simple implements Dictionary
 {
-    private string $name;
-
-    /**
-     * @var array<mixed, E>
-     */
-    private array $values = [];
-
     /**
      * @param array<mixed, E> $values
      */
-    public function __construct(string $name, array $values)
+    public function __construct(private string $name, private array $values)
     {
-        $this->name   = $name;
-        $this->values = $values;
     }
 
     public function getName(): string
@@ -52,7 +43,7 @@ final class Simple implements Dictionary
     }
 
     #[ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->values[$offset];
     }

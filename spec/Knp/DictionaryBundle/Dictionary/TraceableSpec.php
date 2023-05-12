@@ -13,10 +13,7 @@ use PhpSpec\ObjectBehavior;
 
 final class TraceableSpec extends ObjectBehavior
 {
-    /**
-     * @var DictionaryDataCollector
-     */
-    private $collector;
+    private ?\Knp\DictionaryBundle\DataCollector\DictionaryDataCollector $collector = null;
 
     function let()
     {
