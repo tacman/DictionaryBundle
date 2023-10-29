@@ -8,15 +8,12 @@ use Exception;
 use Knp\DictionaryBundle\Dictionary\Collection;
 use Symfony\Component\Validator\ConstraintValidator;
 
-final class DictionaryValidator extends ConstraintValidator
+final class DictionaryValidator
 {
-    use DictionaryValidator\SymfonyCompatibilityTrait;
 
-    private Collection $dictionaries;
 
-    public function __construct(Collection $dictionaries)
+    public function __construct(private Collection $dictionaries)
     {
-        $this->dictionaries = $dictionaries;
     }
 
     private function varToString(mixed $var): string
