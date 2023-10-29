@@ -9,21 +9,16 @@ use ReturnTypeWillChange;
 
 /**
  * @template E
+ *
  * @implements Dictionary<E>
  */
 abstract class Wrapper implements Dictionary
 {
     /**
-     * @var Dictionary<E>
-     */
-    private Dictionary $wrapped;
-
-    /**
      * @param Dictionary<E> $wrapped
      */
-    public function __construct(Dictionary $wrapped)
+    public function __construct(private Dictionary $wrapped)
     {
-        $this->wrapped = $wrapped;
     }
 
     public function getName(): string

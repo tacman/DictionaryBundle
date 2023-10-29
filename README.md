@@ -1,9 +1,16 @@
 DictionaryBundle
 ================
+
+This fork is nearly identical to https://github.com/KnpLabs/DictionaryBundle, but allows for Symfony 6.3 and adds some return types to avoid deprecation warnings.
+
+It also bumps the minimum requirements to php8, since php 7.4 is past EOL.
+
 [![CircleCI](https://circleci.com/gh/KnpLabs/DictionaryBundle.svg?style=svg)](https://circleci.com/gh/KnpLabs/DictionaryBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/KnpLabs/DictionaryBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/KnpLabs/DictionaryBundle/?branch=master)
 
 Are you often tired to repeat static choices like gender or civility in your apps ?
+
+
 
 ## Requirements
 
@@ -43,10 +50,15 @@ knp_dictionary:
       - Bar
       - Baz
 ```
-You will be able to retreive it through the dictionaries collection service:
+You will be able to retreive it by injecting the Collection service and accessing the dictionary by its key
 ```php
-$dictionaries = $container->get(\Knp\DictionaryBundle\Dictionary\Collection::class);
-$dictionary   = $dictionaries['my_dictionary'];
+
+    private Dictionary $myDictionary;
+    public function __construct(
+        \Knp\DictionaryBundle\Dictionary\Collection $dictionaries)
+    {
+        $this->myDictionary = $dictionaries['my_dictionary'];
+    }
 ```
 ### Dictionary form type
 
@@ -268,15 +280,15 @@ services:
 ### phpspec
 
 ```bash
-$ composer install
-$ vendor/bin/phpspec run
+composer install
+vendor/bin/phpspec run
 ```
 
 ### php-cs-fixer
 
 ```bash
-$ composer install
-$ vendor/bin/php-cs-fixer fix
+composer install
+vendor/bin/php-cs-fixer fix
 ```
 
 ### phpstan
@@ -286,8 +298,8 @@ First [install phive](https://github.com/phar-io/phive#getting-phive).
 Then...
 
 ```bash
-$ phive install
-$ tools/phpstan process
+phive install
+tools/phpstan process
 ```
 
 ### rector (*optional*)

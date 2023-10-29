@@ -11,10 +11,7 @@ use PhpSpec\ObjectBehavior;
 
 final class IteratorSpec extends ObjectBehavior
 {
-    /**
-     * @var bool
-     */
-    private $executed;
+    private ?bool $executed = null;
 
     function let()
     {

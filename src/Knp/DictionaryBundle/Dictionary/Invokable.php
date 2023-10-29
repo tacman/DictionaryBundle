@@ -11,12 +11,11 @@ use ReturnTypeWillChange;
 
 /**
  * @template E
+ *
  * @implements Dictionary<E>
  */
 final class Invokable implements Dictionary
 {
-    private string $name;
-
     private bool $invoked = false;
 
     /**
@@ -30,18 +29,11 @@ final class Invokable implements Dictionary
     private $callable;
 
     /**
-     * @var array<mixed>
-     */
-    private array $callableArgs = [];
-
-    /**
      * @param mixed[] $callableArgs
      */
-    public function __construct(string $name, callable $callable, array $callableArgs = [])
+    public function __construct(private string $name, callable $callable, private array $callableArgs = [])
     {
-        $this->name         = $name;
         $this->callable     = $callable;
-        $this->callableArgs = $callableArgs;
     }
 
     public function getName(): string
