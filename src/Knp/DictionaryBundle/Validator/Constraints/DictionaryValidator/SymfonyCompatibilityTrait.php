@@ -12,16 +12,6 @@ use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Constraint;
 
 switch ($version = substr((string) InstalledVersions::getVersion('symfony/validator'), 0, 3)) {
-//    default:
-//        throw new Exception('knplabs/dictionary-bundle is not compatible with the current version of symfony/validator: '.$version);
-//
-//<<<<<<< HEAD
-//    case '6.4':
-//    case '6.3':
-//    case '6.2':
-//    case '6.1':
-//    case '6.0':
-//=======
     case Symfony\SupportedVersion::v5_4:
         trait SymfonyCompatibilityTrait
         {

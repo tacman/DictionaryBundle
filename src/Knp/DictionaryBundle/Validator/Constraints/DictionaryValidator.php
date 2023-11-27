@@ -8,9 +8,8 @@ use Exception;
 use Knp\DictionaryBundle\Dictionary\Collection;
 use Symfony\Component\Validator\ConstraintValidator;
 
-final class DictionaryValidator extends ConstraintValidator
+final class DictionaryValidator
 {
-    use DictionaryValidator\SymfonyCompatibilityTrait;
 
     public function __construct(private Collection $dictionaries)
     {

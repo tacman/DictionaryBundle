@@ -35,7 +35,7 @@ final class Constant implements ValueTransformer
         return \array_key_exists($matches['constant'], $constants);
     }
 
-    public function transform(mixed $value)
+    public function transform(mixed $value): mixed
     {
         if (null === $matches = $this->extract($value)) {
             throw new Exception("Unable to resolve constant {$value}.");
