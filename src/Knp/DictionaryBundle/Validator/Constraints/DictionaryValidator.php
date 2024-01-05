@@ -11,7 +11,6 @@ use Symfony\Component\Validator\ConstraintValidator;
 final class DictionaryValidator
 {
 
-
     public function __construct(private Collection $dictionaries)
     {
     }
@@ -33,8 +32,7 @@ final class DictionaryValidator
         if (\is_float($var)) {
             return 0.0 === $var
                 ? '0.0'
-                : (string) $var
-            ;
+                : (string) $var;
         }
 
         if (\is_object($var) && method_exists($var, '__toString')) {
