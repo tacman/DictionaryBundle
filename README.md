@@ -307,3 +307,12 @@ tools/phpstan process
 ```bash
 rector process --set php70 --set php71 --set php72 --set code-quality --set coding-style --set symfony34 --set twig240 --set psr-4 --set solid src/ spec/
 ```
+
+### Development notes
+
+For local development
+
+```bash
+composer config repositories.tacman_dictionary '{"type": "path", "url": "/home/tac/g/tacman/DictionaryBundle"}'
+composer req tacman/dictionary-bundle:*@dev
+```
