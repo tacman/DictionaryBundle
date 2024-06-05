@@ -9,8 +9,9 @@ use Knp\DictionaryBundle\Dictionary\Collection;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 
-final class DictionaryValidator extends ConstraintValidator
+final class DictionaryValidator extends ConstraintValidator implements ConstraintValidatorInterface
 {
 
     public function __construct(private Collection $dictionaries)
