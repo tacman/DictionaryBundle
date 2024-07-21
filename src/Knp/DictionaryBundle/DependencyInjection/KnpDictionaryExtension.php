@@ -10,21 +10,21 @@ use Knp\DictionaryBundle\Dictionary;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-
+use Symfony\Component\DependencyInjection\Extension\Extension;
 final class KnpDictionaryExtension extends Extension
 {
     /**
-     * @param array<mixed, mixed> $config
+     * @param array<mixed, mixed> $configs
+     * @throws \Exception
      */
-    public function load(array $config, ContainerBuilder $container): void
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
 
         $container
             ->setParameter(
                 'knp_dictionary.configuration',
-                $this->processConfiguration($configuration, $config)
+                $this->processConfiguration($configuration, $configs)
             )
         ;
 
