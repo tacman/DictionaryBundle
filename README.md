@@ -14,22 +14,13 @@ Are you often tired to repeat static choices like gender or civility in your app
 
 ## Requirements
 
-- PHP >= 7.4
-- Symfony 5.4 or >= 6.0
+- PHP 8.3+
+- Symfony ^7.1
 
 ## Installation
 
-Run the following command:
 ```bash
 composer require knplabs/dictionary-bundle
-```
-Register the bundle in ``app/AppKernel.php``
-
-```php
-$bundles = array(
-    // ...
-    new Knp\DictionaryBundle\KnpDictionaryBundle(),
-);
 ```
 
 ## Maintainers
@@ -87,10 +78,8 @@ use Knp\DictionaryBundle\Validator\Constraints\Dictionary;
 
 class User
 {
-    /**
-     * @ORM\Column
-     * @Dictionary(name="my_dictionary")
-     */
+    #[ORM\Column]
+    #[Dictionary(name: "my_dictionary")]
     private $civility;
 }
 ```
