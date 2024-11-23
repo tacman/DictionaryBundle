@@ -41,7 +41,6 @@ final class Simple implements Dictionary
         return \array_key_exists($offset, $this->values);
     }
 
-    #[ReturnTypeWillChange]
     public function offsetGet(mixed $offset): mixed
     {
         return $this->values[$offset];
