@@ -53,7 +53,7 @@ final class Constant implements ValueTransformer
     {
         if (preg_match(self::PATTERN, $value, $matches)) {
             /**
-             * @var array{class: class-string, constant: string} $matches
+             * @  var array{class: class-string, constant: string} $matches
              */
             return $matches;
         }

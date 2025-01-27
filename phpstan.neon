@@ -1,8 +1,7 @@
 parameters:
-    level: 8
+    level: 4
     paths:
         - src
-        - spec/PHPSpec
     excludePaths:
     		- src/Knp/DictionaryBundle/Validator/Constraints/DictionaryValidator.php
 
